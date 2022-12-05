@@ -1,4 +1,4 @@
-package lecture1;
+package com.FC.lecture;
 
 public class VariableTest {
     public static void main(String[] args) {
