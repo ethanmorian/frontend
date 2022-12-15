@@ -32,7 +32,7 @@
 
 ### 1
 
-```aidl 
+```java 
 클래스 참조 배열[] = new 인스턴스[];
 
 참조 배열[0] = new 인스턴스();
@@ -73,7 +73,7 @@
 
 - 공통 속성
 
-```aidl 
+```java 
 // 참조 변수도 사용 가능하나 권장하지 않음
 클래스 참조 변수 = new 인스턴스();
 
@@ -92,7 +92,7 @@
 
 작업단위로 문장들을 묶어서 이름 붙인 것
 
-```aidl 
+```java 
 반환 타입 메서드 이름 (타입 매개변수1, 타입 매개변수2) {
     타입 반환값 = 매개변수1 + 매개변수2;
     return 반환값;
@@ -185,7 +185,7 @@ FILO = First In Last Out, 선입 후출
 
 ### 매개변수가 있는 생성자
 
-```aidl 
+```java 
 클래스 이름 {
     타입 변수1
     타입 변수2
@@ -200,7 +200,7 @@ FILO = First In Last Out, 선입 후출
 
 - 매개변수가 있을 경우 코드가 더 간결해짐
 
-```aidl 
+```java 
 // 매개변수가 있는 생성자가 없을 경우
 클래스 이름 참조 변수 = new 생성자();
 참조 변수.변수1 = 값1;
@@ -275,7 +275,7 @@ this. 이 붙으면 인스턴스 변수
 
 두 클래스를 부모와 자식으로 관계를 맺어주는 것
 
-```aidl 
+```java 
 class 부모 클래스 {
     타입 값1;
 }
@@ -296,7 +296,7 @@ class 자식 클래스 extends 부모 클래스 {
 
 포함 = 클래스의 멤버로 참조 변수를 선언하는 것
 
-```aidl 
+```java 
 class 클래스1 {
     타입 값1;
 }
@@ -326,7 +326,7 @@ class 클래스2 { // 클래스2는 클래스1을 포함
 
 상속받은 조상의 메서드를 자신에 맞게 변경
 
-```aidl 
+```java 
 class 클래스1 {
     타입 값1;
     타입 값2;
@@ -368,7 +368,7 @@ class 클래스2 {
 
 조상의 멤버는 조상의 생성자를 호출해서 초기화
 
-```aidl 
+```java 
 class 부모 클래스 {
     타입 값1, 값2;
     
@@ -476,7 +476,7 @@ abstract 클래스 = 클래스 내에 추상 메서드가 선언 되있음을 �
 
 abstract 메서드 = 선언부만 작성한 추상 메서드임을 알림
 
-```aidl 
+```java 
 abstract class 클래스1 {
     abstract 반환 타입 메서드1();
 } 
@@ -515,14 +515,14 @@ class = public or (default)
 
 조상 타입 참조 변수로 자손 타입 객체를 다루는 것
 
-```aidl 
+```java 
 // 타입 불일치
 조상 타입 참조 변수 = new 자손 인스턴스();
 ```
 
 자손 타입의 참조 변수로 조상 타입의 객체를 가리킬 수 없다
 
-```aidl 
+```java 
 class 클래스1 {
     메서드1 () {
         System.out.println("메서드1");
@@ -550,7 +550,7 @@ class main {
 
 조상 자손 관계의 참조 변수는 서로 형변환 가능
 
-```aidl 
+```java 
 class 클래스1 {멤버 4개}
 class 클래스2 extends 클래스1 {멤버 5개}
 class 클래스3 extends 클래스1 {}
@@ -569,7 +569,7 @@ class 클래스3 extends 클래스1 {}
 클래스3 참조 변수4 = (클래스3)참조 변수1;
 ```
 
-```aidl 
+```java 
 클래스1 참조 변수1 = null;
 클래스2 참조 변수2 = new 클래스2();
 
@@ -600,7 +600,7 @@ class 클래스3 extends 클래스1 {}
 
 조상 타입의 배열에 자손들의 객체를 담을 수 있다
 
-```aidl 
+```java 
 조상 클래스 참조 배열[] = new 조상 인스턴스[3];
 참조 배열[0] = new 자손 인스턴스1();
 참조 배열[1] = new 자손 인스턴스2();
@@ -625,7 +625,7 @@ class 클래스3 extends 클래스1 {}
 
 꼭 필요하지만 자손마다 다르게 구현될 것으로 예상되는 경우에 사용
 
-```aidl 
+```java 
 abstract class 클래스1 { // 추상 클래스
     // 추상 메서드 2개
     abstract 리턴반환  메서드1();
@@ -660,7 +660,7 @@ abstract class 자식 클래스 extends 부모 클래스 { // 불완전한 클�
 
 모든 메서드 = public abstract, 일부 또는 전부 생략 가능
 
-```aidl 
+```java 
 interface 인터페이스 이름 {
     // public abstract 생략 가능
     // 메서드 이름(매개변수 목록);
@@ -674,7 +674,7 @@ interface 인터페이스 이름 {
 
 다중 상속 가능, 추상 메서드는 충돌해도 상관 없음
 
-```aidl 
+```java 
 interface 인터페이스1 extends 인터페이스2, 인터페이스3 {}
 
 interface 인터페이스2 {
@@ -690,7 +690,7 @@ interface 인터페이스3 {
 
 인터페이스에 정의된 추상 메서드를 완성하는 것
 
-```aidl 
+```java 
 class 클래스 이름 implements 인터페이스 이름{
     // 인터페이스의 정의된 메서드 모두 구현
 }
@@ -706,7 +706,7 @@ class 클래스 이름 implements 인터페이스 이름{
 
 인터페이스 타입 매개변수는 인터페이스 구현한 클래스의 인스턴스만 가능
 
-```aidl 
+```java 
 class 클래스1 extends 클래스2 implements 인터페이스 {
     public 반환 타입 메서드1() {}
 }
@@ -731,7 +731,7 @@ class 클래스1 extends 클래스2 implements 인터페이스 {
 
 ## 디폴트 메서드와 static 메서드
 
-```aidl 
+```java 
 interface 인터페이스 {
     // 선언부만 존재하는 추상 메서드
     반환 타입 메서드1();
@@ -750,7 +750,7 @@ interface 인터페이스 {
 
 클래스 안의 클래스
 
-```aidl 
+```java 
 class 클래스1{ // 외부 클래스
     class 클래스2{ // 내부 클래스
     }
@@ -774,34 +774,304 @@ static 내부 클래스 = 클래스 변수
 
 ## 내부 클래스의 제어자와 접근성
 
-내부 클래스의 제어자는 변수에 사용 가능한 제어자와 동일
+내부 클래스에 제어자는 변수에 사용 가능한 제어자와 동일
 
-static 내부 클래스만 static 멤버를 가질 수 있다
+```java 
+class 클래스1 { // (default) or public 만 가능 
+    // 내부 클래스는 private or protected 도 가능
+    private class 클래스2 {}
+    protected class 클래스3 {}
+}
+```
 
-static 내부 클래스에서 외부 클래스 멤버에 접근 불가
+```java 
+class 클래스1 {
+    class 클래스2 { // 인스턴스 내부 클래스
+        // static 변수 선언 불가
+        static 타입 cv = 100;
+        // final static 은 상수이므로 가능
+        final static 타입 a = 100;
+    }
 
-final static 은 상수이므로 허용
+    static class 클래스3 { // static 내부 클래스
+        static 타입 cv =200; // static 클래스만 static 멤버 정의 가능
+    }
+    
+    반환 타입 메서드1() {
+        class 클래스4 { // 지역 내부 클래스
+            // static 변수 선언 불가
+            static 타입 cv = 300;
+            // final static 은 상수이므로 가능
+            final static 타입 a = 300;
+        }
+        // 메서드 안에서 지역 내부 클래스 사용 가능
+        타입 i = 클래스4.a;
+    }
 
-지역 내부 클래스는 메서드 내에서만 사용 가능
+    public static void main(String[] args) {
+        System.out.println(클래스2.a);
+        System.out.println(클래스3.cv);
+        // 지역 내부 클래스는 메서드 내에서만 사용 가능
+        //System.out.println(클래스4.a);
+    }
+}
+```
 
-static 멤버는 인스턴스 멤버에 접근 불가
+```java 
+class 클래스1 {
+    class 클래스2 {} // 인스턴스 멤버
+    static class 클래스3 {} // static 멤버
+    
+    // 인스턴스 멤버끼리 접근 가능
+    클래스2 iv = new 클래스2();
+    // static 멤버끼리 접근 가능
+    클래스3 cv = new 클래스3();
+    
+    static 반환 타입 메서드1() {
+        // static 멤버는 인스턴스 멤버에 접근 불가
+        // 클래스2 멤버1 = new 클래스2();
+        클래스3 멤버2 = new 클래스3();
+        
+        // 인스턴스 클래스는 외부 클래스 생성 후 생성 가능
+        클래스1 외부 클래스 = 클래스1();
+        클래스2 멤버1 = 외부 클래스.new 클래스2();
+    }
+    
+    반환 타입 메서드2() { // 인스턴스 메서드
+        // 인스턴스 멤버, static 멤버 모두 접근 가능
+        클래스2 멤버1 = new 클래스2();
+        클래스3 멤버2 = new 클래스3();
+        
+        // 지역 내부 클래스는 외부에서 접근 불가
+        클래스4 lv = new 클래스4();
+    }
+    
+    반환 타입 메서드3() {
+        class 클래스4 {} // 지역 내부 클래스
+        클래스4 lv = new 클래스4();
+    }
+}
+```
 
-인스턴스 클래스는 외부 클래스를 먼저 생성해야 생성 가능
+```java 
+class 클래스1 {
+    private 타입 iv = 0;
+    static 타입 cv = 0;
+    
+    class 클래스2 { // 인스턴스 내부 클래스
+        // 외부 클래스의 private 멤버 접근 가능
+        타입 siv = iv;
+        static 타입 scv = cv;
+    }
+    
+    static class 클래스3 { // static 내부 클래스
+        // static 클래스는 외부 클래스의 인스턴스 멤버 접근 불가
+        // 타입 siv = iv;
+        static 타입 scv = cv;
+    }
+    
+    반환 타입 메서드1() {
+        // 지역변수는 메서드 종료와 동시에 삭제
+        // 값이 변하지 않는 변수는 상수로 간주
+        타입 lv = 0;
+        final 타입 LV = 0;
+        
+        class 클래스4 { // 지역 내부 클래스
+            // 지역 내부 클래스를 감싸고 있는 메서드의 상수만 사용 가능
+            // 내부 클래스 객체는 메서드 종료 후에도 존재 가능
+            // 타입 liv1 = lv;
+            타입 liv2 = LV;
+        }
+    }
+}
+```
 
-인스턴스 메서드에서는 인스턴스 멤버와 static 멤버 모두 접근 가능
+```java 
+class 클래스1{
+    class 클래스2 { // 인스턴스 내부 클래스
+        타입 iv = 100;
+    }
+    
+    static class 클래스3 { // static 내부 클래스
+        타입 iv = 200;
+        static 타입 cv = 300;
+    }
+    
+    반환 타입 메서드1() {
+        class 클래스4 { // 지역 내부 클래스
+            타입 iv = 400;
+        }
+    }
+}
 
-지역 내부 클래스는 외부에서 접근 불가
+class 클래스5 {
+    public static void main(String[] args) {
+        클래스1 oc = new 클래스1(); // 외부 클래스의 인스턴스 생성 후
+        클래스1.클래스2 ii = oc.new 클래스2(); //  인스턴스 클래스의 인스턴스 생성 가능
 
-외부 클래스의 private 멤버도 접근 가능
+        System.out.println(ii.iv);
+        System.out.println(클래스1.클래스3.cv);
+        
+        // static 내부 클래스의 인스턴스는 외부 클래스를 먼저 생성하지 않아도 된다
+        클래스1.클래스3 si = new 클래스1.클래스3();
+    }
+}
+```
 
-static 클래스는 외부 클래스의 인스턴스 멤버에 접근 불가
+```java 
+class 클래스1 {
+    타입 value = 10; // 클래스1.this.value
+    
+    class 클래스2 { 
+        타입 value = 20; // this.value
+        
+        반환 타입 메서드1() {
+            int value = 30; // 지역변수
 
-지역 내부 클래스를 감싸고 있는 메서드의 상수만 사용 가능
+            System.out.println(value); // 10
+            System.out.println(this.value); // 20
+            System.out.println(클래스1.this.value); // 30
+        }
+    } // 클래스2의 끝
+} // 클래스1의 끝
 
-내부 클래스 객체가 지역 변수보다 오래 존재
+class 클래스3 {
+    public static void main(String[] args) {
+        클래스1 outer = new 클래스1();
+        클래스1.클래스2 inner = 클래스1.new 클래스2();
+        클래스2.메서드1();
+    }
+}
+```
 
-final 이 없는 변수의 값이 변하지 않을 경우 상수 취급
+## 익명 클래스(anonymous class)
 
-메서드가 종료되도 상수는 사용 가능
+정의와 생성을 동시에 하는 이름 없는 일회용 클래스
 
-static 내부 클래스의 인스턴스는 외부 클래스를 먼저 생성하지 않아도 된다
+```java 
+new 조상 클래스 이름() {
+    // 멤버 선언
+}
+
+new 구현 인터페이스 이름() {
+    // 멤버 선언
+}
+```
+
+```java 
+class 클래스1 {
+    // 익명 클래스
+    Object iv = new Object() {반환 타입 메서드1(){}};
+    // 익명 클래스
+    static Object cv = new Object(){반환 타입 메서드1(){}};
+    
+    반환 타입 메서드1() {
+        // 익명 클래스
+        Object lv = new Object(){반환 타입 메서드1(){}};
+    }
+}
+```
+
+```java 
+class 클래스1 {
+    public static void main(String[] args) {
+        클래스2 a = new 클래스2();
+        a.메서드1(new 클래스3());
+    }
+}
+
+class 클래스3 implements 인터페이스1 {
+    // 클래스 내용
+}
+
+// 익명 클래스 사용 시
+class 클래스1 {
+    public static void main(String[] args) {
+        클래스2 a = new 클래스2();
+        a.메서드1(new 인터페이스1() {
+           // 클래스 내용 
+        });
+    }
+}
+```
+
+## 프로그램 오류
+
+컴파일 에러 = 컴파일 할 때 발생하는 에러
+
+런타임 에러 = 실행할 때 발생하는 에러
+
+논리적 에러 = 작성 의도와 다르게 동작
+
+## 예외 처리하기
+
+```java 
+try { // try문의 괄호 생략 불가
+    // 예외가 발생할 수 있는 문장
+    // 예외 발생 시 그 이후 문장은 수행되지 않음
+} catch (Exception1 e1) {
+    // Exception1 이 발생했을 경우 이를 처리하기 위한 문장
+} catch (Exception2 e1) {
+    // Exception2 이 발생했을 경우 이를 처리하기 위한 문장
+} catch (ExceptionN eN) {
+    // ExceptionN 이 발생했을 경우 이를 처리하기 위한 문장
+}
+```
+
+## printStackTrace()와 getMessage()
+
+Exception.printStackTrace(); = 예외 발생 당시 호출 스택에 있었던 메서드의 정보와 1예외 메시지를 화면에 출력한다.
+
+Exception.getMessage(); = 발생한 예외 클래스의 인스턴스에 저장된 메시지를 얻을 수 있다
+
+## 멀티 catch 블럭
+
+```java 
+try {
+        ...
+} catch (Exception1 e) {
+    e.printStatckTrac();
+} catch (Exception2 e) {
+    e.printStatckTrac();
+}
+
+// 내용이 같은 catch 블럭을 하나로 합친 것
+try {
+        ...
+} catch (Exception1 | Exception2 e) {
+    e.printStatckTrac();
+}
+// Exception1과 Exception2가 부모 자식 관계일 경우 부모만 써도 됨
+// Exception1에만 있거나 Exception2에만 있는 메서드 사용 불가
+// if else 문으로 instanceof 체크 후 형변환 하면 사용 가능
+```
+
+## 예외 발생시키기
+
+```java 
+// 연산자 new 를 이용해 예외 클래스 인스턴스 생성
+Exception e = new Exception("임의 발생");
+// 키워드 throw 를 이용해 예외 발생
+throw e;
+```
+
+## checked 예외, unchecked 예외
+
+checked 예외 = 컴파일러가 예외 처리 여부를 체크(예외 처리 필수)
+
+unchecked 예외 = 컴파일러가 예외 처리 여부를 체크 안함(예외 처리 선택)
+
+## 메서드에 예외 선언하기
+
+예외를 처리하는 방법 = try-catch 문, 예외 선언하기
+
+메서드 호출 시 발생 가능한 예외를 호출하는 쪽에 알리는 것
+
+```java 
+// 예외를 선언하는 키워드 throws
+// Exception과 그 자손 예외 발생 가능
+반환 타입 메서드1 throws Exception{
+        // 메서드 내용
+}
+```
+
