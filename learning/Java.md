@@ -1075,3 +1075,182 @@ unchecked 예외 = 컴파일러가 예외 처리 여부를 체크 안함(예외 
 }
 ```
 
+## finally 블럭
+
+예외 발생 여부와 관계없이 수행되어야하는 코드
+
+```java 
+try {
+    // 예외가 발생할 수 있는 문장
+} catch (Exception1 e1) {
+    // 예외처리를 위한 문장
+} finally {
+    // 예외 발생 여부와 관계없이 수행되어야 하는 문장
+    //  finally 블럭은 try-catch 문 맨 마지막에 위치    
+}
+// try 문 안에 return 문으로 try 문을 빠져나가도 finally 문은 실행됨
+```
+
+## 사용자 정의 예외 만들기
+
+```java 
+// Exception 과 RuntimeException 중에 조상을 선택해 예외 생성
+class 예외1 extends Exception {
+    생성자1(String 매개변수1) { // 문자열을 매개변수도 받는 생성자
+        super(매개변수1); // Exception 클래스의 생성자 호출
+    }
+}
+```
+
+## 예외 되던지기(exception re-throwing)
+
+예외 처리 후 다시 예외 발생시키는 것
+
+```java 
+// 호출한 메서드와 호출된 메서드 양쪽 모두에서 예외 처리
+class 클래스1 {
+    public static void main(String[] args) {
+        try {
+            메서드1(); // 예외 발생 > 예외 처리 > 예외 발생
+        } catch (Exception e) { // 남아 있는 예외 처리
+            System.out.println("main 메서드에서 예외 처리");
+        }
+    } // main 메서드 끝
+    
+    static 반환 타입 메서드1() throws Exception {
+        try {
+            throw new Exception();
+        } catch (Exception e) {
+            System.out.println("메서드1에서 예외 처리");
+            throw e; //다시 예외 발생
+        }
+    }
+}
+```
+
+## 연결된 예외(chained exception)
+
+예외가 다른 예외 발생시킬 수 있다
+
+예외 a가 예외 b를 발생시키면 a는 b의 원인 예외(cause exception)
+
+Throwable initCause(Throwable cause) = 지정한 예외를 원인 예외로 등록
+
+Throwable getCause() = 원인 예외 반환
+
+```java
+// Throwable 은 Exception 과 error 의 조상
+public class Throwable implements Serializable {
+    private Throwable cause = this; // 객체 자신을 원인 예외로 등록
+    public synchronized Throwable initCause(Throwable cause) {
+        this.cause = cause; // cause 를 원인 예외로 등록
+        return this;
+    }
+}
+```
+
+### 사용 이유
+- 여러 예외를 하나로 묶어 다루기 위해 사용
+- checked 예외를 unchecked 예외로 변경할 때
+
+## Object 클래스
+
+모든 클래스의 조상, 11개의 메서드 보유
+
+notify(), wait() 등은 쓰레드와 관련된 메서드
+
+## equals(Object obj)
+
+객체 자신(this)와 주어진 객체(obj)를 비교한다. 같으면 true 다르면 false
+
+Object 클래스의 equals()는 객체의 주소를 비교(참조 변수값 비교)
+
+## equals(Object obj)의 오버라이딩
+
+인스턴스 변수의 값을 비교하도록 equals()를 오버라이딩 해야 한다
+
+```java 
+class 클래스1 {
+    long 변수1;
+    
+    public boolean equals(Object obj) {
+        if(obj instanceof 클래스1)
+            // obj 가 Object 타입이므로 변수1값을 참조하기 위해 클래스1 타입으로 형변환 필요함
+            return 변수1 == ((클래스1)obj).변수1;
+        else
+            // 타입이 클래스1이 아닐경우 비교 할 필요 없음
+            return false;
+    }
+    
+    클래스1(long 변수1) {
+        this.변수1 = 변수1;
+    }
+}
+```
+
+## hashCode()
+
+객체의 해시코드(hash code)를 반환하는 메서드
+
+Object 클래스의 hashCode()는 객체의 주소를 int 로 변환해서 반환
+
+```java 
+public class Object {
+    public native int hashCode(); // 내용 없음
+}
+```
+
+equals()를 오버라이딩하면, hashCode()도 오버라이딩 해야 한다
+
+equals()의 결과가 true 인 두 객체의 해시코드가 같아야 하기 때문이다
+
+## toString(), toString()의 오버라이딩
+
+toString() = 객체를 문자열로 변환하기 위한 메서드
+
+## String 클래스
+
+String 클래스 = 데이터(char[]) + 메서드(문자열 관련)
+
+내용을 변경할 수 없는 불변(immutable) 클래스
+
+덧셈 연산자를 이용한 문자열 결합은 성능이 떨어짐
+
+문자열 결합이나 변경이 잦다면 내용을 변경 가능한 StringBuffer 를 사용
+
+## 문자열의 비교
+
+```java 
+// 내용 변경 불가
+String str1 = "abc";
+String str1 = "abc";
+
+str1 == str2 ? true // 주소값 비교
+str1.equals(str2) ? true // 내용 비교
+
+// 매번 새로운 String 인스턴스 생성
+Sting str3 = new String("abc");
+Sting str4 = new String("abc");
+
+str3 == str4 ? false // 주소값 비교
+str3.equals(str4) ? true  / 내용 비교
+```
+
+## 문자열 리터럴
+
+프로그램 실행 시 자동 생성(constant pool(상수 저장소)에 저장)
+
+같은 내용의 문자열 리터럴은 하나만 만들어짐
+
+## 빈 문자열("", empty string)
+
+내용이 없는 문자열, 크기가 0인 char 형 배열을 저장하는 문자열
+
+어느 타입이나 크기가 0인 배열 생성 가능
+
+```java 
+// 문자(char)와 문자열(str)의 초기화
+String s = "";
+char c = ' ';
+```
+
