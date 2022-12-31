@@ -1282,3 +1282,26 @@ int 변수2 = Integer.valueOf("100"); // 기본형
 Integer 변수2 = Integer.valueOf("100"); // 참조형
 ```
 
+## StringBuffer 클래스
+
+String 처럼 문자형 배열(char[])을 내부적으로 가지고 있다
+
+String 과 달리 내용을 변경할 수 있다
+
+## StringBuffer 의 생성자
+
+배열은 길이 변경 불가, 공간이 부족할 경우 새로 생성
+
+StringBuffer 는 저장할 문자열의 길이를 고려해 적절한 크기로 생성
+
+## StringBuffer 의 변경
+
+String 과 달리 내용 변경 가능
+
+append()는 지정된 내용을 추가 후, StringBuffer 의 참조를 반환
+
+## StringBuffer 의 비교
+
+StringBuffer 는 equals()가 오버라이딩되어 있지 않다
+
+String 으로 변환 후 equals()로 비교해야 한다
