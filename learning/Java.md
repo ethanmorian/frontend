@@ -1305,3 +1305,36 @@ append()는 지정된 내용을 추가 후, StringBuffer 의 참조를 반환
 StringBuffer 는 equals()가 오버라이딩되어 있지 않다
 
 String 으로 변환 후 equals()로 비교해야 한다
+
+## StringBuilder
+
+동기화되지 않았다.
+
+StringBuffer 는 동기화되어 있다 멀티 쓰레드에 안전(thread-safe)
+
+싱글 쓰레드 = 한번에 1개 작업
+
+멀티 쓰레드 = 한번에 n 개 작업
+
+멀티 쓰레드 프로그램이 아닌 경우 동기화는 불필요한 성능저하
+
+이럴 때 StringBuffer 대신 StringBuilder 사용하면 성능 향상
+
+StringBuffer 과 메서드 동일, 동기화 여부만 차이
+
+## Math 클래스
+
+수학관련 static 메서드의 집합
+
+인스턴스 생성할 필요 없음
+
+## 래퍼(wrapper) 클래스
+
+기본형 값을 감싸는 클래스
+
+8개의 기본형을 객체로 다뤄야 할 때 사용하는 클래스
+
+## Number 클래스
+
+모든 숫자 래퍼 클래스의 조상
+
