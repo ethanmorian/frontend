@@ -1338,3 +1338,32 @@ StringBuffer 과 메서드 동일, 동기화 여부만 차이
 
 모든 숫자 래퍼 클래스의 조상
 
+## 문자열을 숫자로 변환하기
+
+### 문자열을 숫자로 변환하는 방법
+
+```java 
+// floatValue(), longValue 등
+int 변수1 = new Integer("100").intValue();
+
+// 주로 사용
+int 변수2 = Integer.parseInt("100");
+
+// Integer 대신 int 가능
+Integer 변수3 = Integer.valueOf("100");
+```
+
+### n 진법의 문자열을 숫자로 변환하는 방법
+
+```java 
+int 변수4 = Integer.parseInt("100", 2); // 100(2) > 4
+int 변수5 = Integer.parseInt("100", 8); // 100(8) > 64
+int 변수6 = Integer.parseInt("100", 16); // 100(16) > 256
+int 변수7 = Integer.parseInt("FF", 16); //  FF(16) > 256
+int 변수8 = Integer.parseInt("FF"); // NumberFormatException 발생
+```
+
+## 오토박싱 & 언박싱
+
+기본형의 값을 객체로 자동변환하는 것을 오토박싱 그 반대가 언박싱
+
