@@ -1367,3 +1367,70 @@ int 변수8 = Integer.parseInt("FF"); // NumberFormatException 발생
 
 기본형의 값을 객체로 자동변환하는 것을 오토박싱 그 반대가 언박싱
 
+## 날짜와 시간
+
+### Calendar 클래스
+
+추상 클래스이므로 getInstance()를 통해 구현된 객체를 얻어야 한다
+
+```java 
+// 현재 시간
+Calendar 변수1 = Calendar.getInstance();
+
+// 특정 필드의 값 가져오기
+변수1.get(Calendar.YAER) // 년
+        
+// 특정 필드의 값 설정하기
+변수1.set(1234, 5, 6) // 년, 월, 일
+        
+// Calendar 의 모든 필드 초기화
+// 1970년 1월 1일 00시 00분 00초
+변수1.clear()
+
+// 특정 필드의 값 증가 또는 감소, 다른 필드에 영향 있음
+// 변수1이 8월 31일일 경우 9월 1일로 변경
+변수1.add(Calendar.DATE, +1)
+
+// 특정 필드의 값 증가 또는 감소, 다른 필드에 영향 없음
+// 변수1이 8월 31일일 경우 8월 1일로 변경
+변수1.roll(Calendar.DATE, -8)
+```
+
+### Date 와 Calendar 간의 변환
+
+```java 
+// Calendar > Date
+Calendar cal = Calendar.getInstance();
+Date d = new Date(Calendar.getTimeInMillis());
+
+// Date > Calendar
+Date d = new Date();
+Calendar cal = Calendar.getInstance();
+cal.setTime(d)
+```
+
+## 형식화 클래스
+
+java.text 패키지의 DecimalFormat, SimpleDateFormat
+
+숫자 or 날짜 > 원하는 형식 기능
+
+형식 문자열 > 숫자 or 날짜 기능
+
+### DecimalFormat
+
+```java 
+// 숫자 or 날짜 > 원하는 형식
+double number = 1234567.89;
+DecimalFormat df = new DecimalFormat("#.#E0");
+String result = df.format(number);
+// result = "1.2E6"
+
+// 형식 문자열 > 숫자 or 날짜
+DecimalFormat df = new DecimalFormat("#,###.##");
+Number num = df.parse("1,234,567.89")
+double d = num.doubleValue();
+// d = 1234567.89
+// Integer.parseInt()는 콤마가 포함된 문자열 숫자로 변환 못함 
+```
+
