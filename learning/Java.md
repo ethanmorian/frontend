@@ -1434,3 +1434,87 @@ double d = num.doubleValue();
 // Integer.parseInt()는 콤마가 포함된 문자열 숫자로 변환 못함 
 ```
 
+### SimpleDateFormat
+
+```java 
+// 날짜와 시간 다양한 형식으로 출력
+Date today = new Date();
+SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+String result = df.format(today);
+
+// 특정 형식으로 되어 있는 문자열에서 날짜와 시간 추출
+DateFormat df = new SimpleDateFormat("yyyy년 MM월 dd일");
+DataFormat df2 = new SimpleDateFormat("yyyy/MM/dd");
+Date d = df.parse("2015년 11월 23일");
+String result = df2.format(d);
+```
+
+## 컬렉션 프레임웍(collections framework)
+
+컬렉션(collection) = 객체를 모아놓은 것
+
+프레임웍(framework) = 표준화, 정형화된 체계적인 프로그래밍 방식
+
+### 컬렉션 프레임웍(collections framework)
+
+- 컬렉션(다수의 객체)을 다루기 위해 표준화된 프로그래밍 방식
+- 컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스 제공
+
+컬렉션 클래스(collection class) = 다수의 데이터를 저장할 수 있는 클래스(Vector, ArrayList, HashSet)
+
+## 컬렉션 프레임웍의 핵심 인터페이스
+
+List = 순서 존재, 중복 허용
+
+Set = 순서 없음, 중복 비허용
+
+Map = 순서 없음, 값만 중복 허용
+
+Collection = List 와 Set 의 공통부분을 뽑아낸 것
+
+## Collection 인터페이스의 메서드
+
+boolean add(Object o), boolean addAll(Collection c) = 추가
+
+boolean remove(Object o) = 삭제
+
+boolean removeAll(Collection c) = 삭제
+
+void clear() = 전체 삭제
+
+boolean isEmpty() = 비어있는지 확인
+
+int size() = 저장된 객체의 개수 반환
+
+boolean contains(Object o), boolean containsAll(Collection c) = 특정 객체를 가지고 있는지 검색
+
+## List 인터페이스 = 저장 순서 유지, 중복 허용
+
+void add(int index, Object element), boolean addAll(int index, Collection c) = 추가
+
+Object remove(int index) = 삭제
+
+Object get(int index) = 읽기
+
+Object set(int index, Object element) = 변경
+
+int indexOf(Object o), int lastIndexOf(Object o) = 검색
+
+void sort(Comparator c) = 정렬
+
+List subList(int fromIndex, int toIndex) = 일부 리스트 추출
+
+## Set 인터페이스 = 저장 순서 없음, 중복 비허용
+
+Collection 인터페이스와 동일한 메서드
+
+## Map 인터페이스 = 저장 순서 없음, 값은 중복 허용
+
+Object put(Object key, Object value), void putAll(Map t) = 추가
+
+Object remove(Object key) = 삭제
+
+boolean containsKey(Object key), boolean containsValue(Object value), Object get(Object key) = 검색
+
+Set entrySet(), Set keySet(), Collection values() = 읽기
+
