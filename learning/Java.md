@@ -1312,9 +1312,9 @@ String 으로 변환 후 equals()로 비교해야 한다
 
 StringBuffer 는 동기화되어 있다 멀티 쓰레드에 안전(thread-safe)
 
-싱글 쓰레드 = 한번에 1개 작업
+싱글 쓰레드 = 한 번에 1개 작업
 
-멀티 쓰레드 = 한번에 n 개 작업
+멀티 쓰레드 = 한 번에 n 개 작업
 
 멀티 쓰레드 프로그램이 아닌 경우 동기화는 불필요한 성능저하
 
@@ -1517,4 +1517,76 @@ Object remove(Object key) = 삭제
 boolean containsKey(Object key), boolean containsValue(Object value), Object get(Object key) = 검색
 
 Set entrySet(), Set keySet(), Collection values() = 읽기
+
+## ArrayList
+
+기존의 Vector 를 개선한 것, 구현원리와 기능적으로 동일
+
+ArrayList 와 달리 Vector 는 자체적으로 동기화되어 있다
+
+List 인터페이스를 구현하므로, 저장 순서 유지, 중복 허용
+
+데이터 저장 공간으로 배열 사용
+
+## ArrayList 의 메서드
+
+ArrayList() = 기본 생성자
+
+ArrayList(Collection c), ArrayList(int initialCapacity) = 배열 길이 설정 생성자
+
+boolean add(Object o), boolean addAll(Collection c) = 추가, 성공하면 true, 실패하면 false
+
+void add(int index, Object element), boolean addAll(int index, Collection c) = 저장 위치에 추가
+
+boolean remove(Object o), boolean removeAll(Collection c) = 삭제
+
+Object remove(int index) = 특정 위치 삭제
+
+void clear() = 전체 삭제
+
+int indexOf(Object o), int lastIndexOf(Object o) = 검색
+
+boolean contains(Object o) = 검색, 있으면 true, 없으면 false
+
+Object get(int index) = 특정 위치 객체 반환
+
+Object set(int index, Object element) = 특정 위치 객체 변환
+
+List subList(int fromIndex, toIndex) = fromIndex 와 toIndex 사이에 객체 추출 후 리스트 생성
+
+Object[] toArray() = ArrayList 의 객체 반환
+
+boolean isEmpty() = 비어있는 지 확인
+
+void trimToSize() = 빈 공간 제거
+
+int size() = 저장된 객체 수 반환
+
+## ArrayList 에 저장된 객체의 삭제 과정
+
+### ArrayList 에 저장된 세 번째 데이터를 삭제하는 과정
+
+```java 
+// 길이 7의 배열
+data1 = [0,1,2,3,4,5,6]
+
+// 세 번째 데이터 아래 데이터를 한 칸씩 위로 복사 후 덮어 쓰기
+data1 = [0,1,2,4,5,6,null]
+
+// 데이터 수가 줄어듬에 따라 배열의 크기 감소
+data1 = [0,1,2,4,5,6]
+```
+
+- 삭제할 데이터 아래의 데이터를 한 칸씩 위로 복사해서 삭제할 데이터를 덮어쓴다
+- 데이터가 모두 한 칸씩 이동해 마지막 데이터는 null 로 변경
+- 데이터 삭제 후 데이터 개수가 줄었으므로 size 의 값 감소
+- 마지막 데이터를 삭제하는 경우 배열의 복사는 불필요
+
+### LinkedList
+
+### 배열의 장단점
+- 장점 = 구조 간단, 데이터를 읽는 접근 시간 짧음
+- 단점 = 크기 변경 불가, 비순차적인 데이터 추가 및 삭제에 시간이 많이 걸림
+
+배열과 달리 링크드 리스트는 불연속적으로 존재하는 테이블을 연결(link)
 
