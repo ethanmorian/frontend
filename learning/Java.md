@@ -1590,3 +1590,54 @@ data1 = [0,1,2,4,5,6]
 
 배열과 달리 링크드 리스트는 불연속적으로 존재하는 테이블을 연결(link)
 
+데이터 삭제 = 참조 변경
+
+데이터 추가 = Node 객체 생성 후 참조 변경
+
+링크드 리스트(linked list) = 연결 리스트, 데이터 접근성이 나쁨
+
+더블리 링크드 리스트(doubly linked list) = 이중 연결 리스트, 접근성 향상
+
+더블리 서큘러 링크드 리스트(doubly circular linked list) = 이중 원형 연결 리스트
+
+순차적으로 데이터 추가 및 삭제 = ArrayList 가 더 빠름
+
+비순차적으로 데이터 추가 및 삭제 = LinkedList 가 더 빠름
+
+접근시간 = ArrayList
+
+## 스택과 큐(Stack & Queue)
+
+스택(Stack) = LIFO 구조, 마지막에 저장된 것을 먼저 꺼낸다
+
+큐(Queue) = FIFO 구조, 먼저 저장한 것을 먼저 꺼낸다
+
+스텍 = 배열로 구현하는 것이 좋음
+
+큐 = 링크드리스트로 구현하는 것이 좋음
+
+## 스택과 큐(Stack & Queue)의 메서드
+
+### 스택의 메서드
+boolean empty() = 스택이 비어있는지 알려준다
+
+Object pop() = 삭제
+
+Object push(Object item) = 추가
+
+Object peek() = 맨 위에 저장된 객체 반환
+
+int search(Object o) = 객체를 찾아 위치 반환, 없으면 -1
+
+### 큐의 메서드
+
+boolean offer(Object o) = 추가, 성공하면 true 실패하면 false
+
+Object poll() = 삭제, 비어있으면 null 반환
+
+Object remove() = 삭제, 비어있으면 예외 발생
+
+boolean add(Object o) = 추가, 실패하면 예외 발생
+
+## Stack 과 Queue 의 활용
+
