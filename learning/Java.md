@@ -1640,3 +1640,4 @@ Object remove() = 삭제, 비어있으면 예외 발생
 boolean add(Object o) = 추가, 실패하면 예외 발생
 
 ## Stack 과 Queue 의 활용
+
