@@ -1639,5 +1639,27 @@ Object remove() = 삭제, 비어있으면 예외 발생
 
 boolean add(Object o) = 추가, 실패하면 예외 발생
 
-## Stack 과 Queue 의 활용
+## Iterator, ListIterator, Enumeration
 
+컬렉션에 저장된 데이터를 접근하는 데 사용되는 인터페이스
+
+boolean hasNext() = 읽어올 요소가 있는지 확인, 있으면 true 없으면 false
+
+Object next() = 다음 요소를 읽어 온다
+
+컬렉션에 저장된 요소들을 읽어오는 방법을 표준화한 것
+
+컬렉션에 iterator()를 호출해서 Iterator 를 구현한 객체를 얻어서 사용
+
+```java 
+List list = new ArrayList();
+Iterator it = list.iterator();
+
+while(it.hasNext()) {
+    System.out.println(it.next());
+}
+```
+
+## Map 과 Iterator
+
+Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야
