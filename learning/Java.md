@@ -1666,3 +1666,25 @@ Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야 함
 
 ## Arrays
 
+배열의 출력 = toString()
+
+배열의 복사 = copyOf(), copyOfRange()
+
+배열 채우기 = fill(), setAll()
+
+배열의 정렬과 검색 = sort(), binarySearch() //정렬된 배열에 사용
+
+### 순차 검색과 이진 검색
+- 순차 검색 = 순서대로 찾는 것
+- 이진 탐색 = 둘로 나눠서 찾는 것
+
+다차원 배열의 출력 = deppToString()
+
+다차원 배열의 비교 = deepEquals)
+
+배열을 리스트로 변환 = asList()
+
+람다와 스트림 관련 = parallelXXX(), spliterator(), stream()
+
+
+
