@@ -1686,5 +1686,13 @@ Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야 함
 
 람다와 스트림 관련 = parallelXXX(), spliterator(), stream()
 
+## Comparator 와 Comparable
 
+객체 정렬에 필요한 메서드(정렬 기준 제공)를 정의한 인터페이스
+
+Comparable = 기본 정렬 기준 구현에 사용
+
+Comparator = 기본 정렬 기준 외 다른 기준으로 정렬할 때 사용
+
+compare()과 compareTo()는 두 객체의 비교결과를 반환하도록 작성
 
