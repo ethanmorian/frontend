@@ -1696,3 +1696,45 @@ Comparator = 기본 정렬 기준 외 다른 기준으로 정렬할 때 사용
 
 compare()과 compareTo()는 두 객체의 비교결과를 반환하도록 작성
 
+## HashSet = 순서 X, 중복 X
+
+### HashSet
+- set 인터페이스를 구현한 대표적인 컬렉션 클래스
+- 순서를 유지하려면 LinkedHashSet 클래스를 사용
+
+### TreeSet
+- 범위 검색과 정렬에 유리한 컬렉션 클래스
+- HashSet 보다 데이터 추가, 삭제에 시간이 더 걸림
+
+## HashSet 주요 메서드
+
+HashSet(Collection c) = 생성자
+
+HashSet(int initialCapacity) = 초기 용량
+
+HashSet(int initialCapacity, float loadFactor) = 용량 증가 시점 설정 ex) 0.8일 경우 80% 채웠을 때 용량 증가
+
+boolean add(Object o) = 추가
+
+boolean addAll(Collection c) = 추가, 합집합 구할 때 사용
+
+boolean remove(Object o) = 삭제
+
+boolean removeAll(Collection c) = 삭제, 교집합 구할 때 사용
+
+void clear() = 모두 삭제
+
+boolean retainAll(Collection c) = 조건부 삭제, 차집합 구할 때 사용
+
+boolean contains(Object o) = 포함되어 있으면 true, 없으면 false
+
+boolean containsAll(Collection c) = 컬렉션에 담긴 여러 객체가 모두 포함되어 있는지 확인
+
+Iterator iterator() = 컬렉션의 요소 읽기
+
+boolean isEmpty() = 비어있는지 확인
+
+int size() = 저장된 객체의 갯수
+
+Object[] toArray(), Object[] toArray(Object[] a) = set 에 저장된 객체를 객체 배열로 반환
+
