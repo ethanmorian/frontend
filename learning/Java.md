@@ -1,6 +1,6 @@
 # Java
 
-## 클래스와 객체
+# 클래스와 객체
 
 클래스로 객체 정의 및 생성
 
@@ -16,7 +16,7 @@
 
 하나의 소스파일엔 하나의 public class 만 존재
 
-## 객체 생성
+# 객체 생성
 
 인스턴스 = `클래스 참조 변수 = new 생성자();`
 
@@ -28,9 +28,9 @@
 
 `참조 변수 = 참조 변수;`
 
-## 객체 배열
+# 객체 배열
 
-### 객체 배열 생성 방법1
+## 객체 배열 생성 방법1
 
 ```java 
 클래스 참조 배열[] = new 생성자[];
@@ -42,34 +42,34 @@
 참조 배열[2] = new 생성자();
 ```
 
-### 객체 배열 생성 방법2
+## 객체 배열 생성 방법2
 
 - `클래스 참조 배열[] = {new 생성자(), new 생성자(), new 생성자()};`
 
-## 클래스란
+# 클래스란
 
 클래스 = 데이터 + 함수
 
-## 선언 위치에 따른 변수 종류
+# 선언 위치에 따른 변수 종류
 
-### 클래스 영역 = 선언문만 가능
+## 클래스 영역 = 선언문만 가능
 
 - iv(instance variable) = 인스턴스가 생성되었을 때 생성
 - cv(class variable) = static + iv 형태, 클래스가 메모리에 올라갈 때 생성
 
-### 메서드 영역
+## 메서드 영역
 
 - lv(local variable) = 변수 선언문이 수행되었을 때 생성, 메서드 종료시 사용 불가
 
-## 클래스 변수와 인스턴스 변수
+# 클래스 변수와 인스턴스 변수
 
-### 인스턴스 변수
+## 인스턴스 변수
 
 - 개별 속성
 - `클래스 참조변수 = new 생성자();`
 - 객체 생성과 비례해 생성
 
-### 클래스 변수
+## 클래스 변수
 
 - 공통 속성
 
@@ -84,7 +84,7 @@
 - 1개만 존재
 - 객체 생성없이 사용 가능, 자동으로 생성
 
-## 메서드란?
+# 메서드란?
 
 문장들을 묶어 놓은 것
 
@@ -99,13 +99,13 @@
 }
 ```
 
-## 메서드 호출
+# 메서드 호출
 
 메서드 호출 방법 = `메서드 이름(값1, 값2)`
 
 메서드는 클래스 영역에만 정의 가능
 
-## return 문
+# return 문
 
 실행 중인 메서드를 중지하고 호출한 곳으로 복귀
 
@@ -115,16 +115,16 @@ if 문의 경우 참과 거짓의 두 가지 경우의 return 문이 필요
 
 메서드의 반환 타입과 반환값의 반환 타입 일치
 
-## 호출 스택(call stack)
+# 호출 스택(call stack)
 
 FILO = First In Last Out, 선입 후출
 
-## 기본형 매개변수
+# 기본형 매개변수
 
 변수 값 읽기만 가능(Read only)
 
 
-## 참조형 매개변수
+# 참조형 매개변수
 
 변수 값 읽고 변경 가능(Read and write)
 
@@ -132,30 +132,30 @@ FILO = First In Last Out, 선입 후출
 
 같은 클래스 안 or static 메서드 = 참조 변수 없이 호출 가능
 
-## static 메서드와 인스턴스 메서드
+# static 메서드와 인스턴스 메서드
 
-### static 메서드(클래스 메서드)
+## static 메서드(클래스 메서드)
 
 - 객체 생성 없이 `클래스 이름.메서드 이름();`으로 호출
 - 메서드 안에서 인스턴스 변수 사용 불가
 - 클래스 변수는 사용 가능
 - 인스턴스 메서드 호출 불가
 
-### 인스턴스 메서드
+## 인스턴스 메서드
 
 - 인스턴스 생성 후 `참조 변수. 메서드 이름();`으로 호출
 - 메서드 안에서 인스턴스 변수 사용 가능
 
-### static 을 붙이는 기준
+## static 을 붙이는 기준
 
 - 인스턴스 변수를 사용하지 않는 메서드
 - 속성 중 공통 속성
 
-## 오버로딩(Overloading)
+# 오버로딩(Overloading)
 
 한 클래스 안에 같은 이름의 메서드 여러 개를 정의한 것
 
-### 오버로딩 성립 조건
+## 오버로딩 성립 조건
 
 - 메서드 이름이 같아야 한다
 - 매개변수의 개수 또는 타입이 달라야 한다
@@ -163,7 +163,7 @@ FILO = First In Last Out, 선입 후출
 
 메서드 이름 = 대부분 동사
 
-## 생성자(constructor)
+# 생성자(constructor)
 
 인스턴스가  생성될 때마다 호출되는 '인스턴스 초기화 메서드'
 
@@ -175,7 +175,7 @@ FILO = First In Last Out, 선입 후출
 
 모든 클래스는 1개 이상의 생성자가 있어야 함
 
-### 기본 생성자(default constructor)
+## 기본 생성자(default constructor)
 
 - 매개변수가 없는 생성자
 - 생성자가 하나도 없을 때만 컴파일러가 자동 추가
@@ -183,7 +183,7 @@ FILO = First In Last Out, 선입 후출
 - `클래스 이름() {}`
 - 기본 생성자 없이 매개변수가 있는 생성자가 있을 경우 에러 발생
 
-### 매개변수가 있는 생성자
+## 매개변수가 있는 생성자
 
 ```java 
 클래스 이름 {
@@ -215,13 +215,13 @@ FILO = First In Last Out, 선입 후출
 - new = 객체 생성
 - 생성자() = 생성자 호출 후 객체 초기화
 
-## 생성자 this()
+# 생성자 this()
 
 같은 클래스에 생성자 안에서 다른 생성자를 호출할 때 사용
 
 첫 줄에서만 사용 가능
 
-## 참조 변수 this
+# 참조 변수 this
 
 인스턴스 자신을 가리키는 참조 변수
 
@@ -239,17 +239,17 @@ this. 이 붙으면 인스턴스 변수
 
 선언 안 해도 사용 가능
 
-## 변수의 초기화
+# 변수의 초기화
 
 지역 변수는 수동 초기화 해야 함
 
 멤버 변수(인스턴스 변수, 클래스 변수)는 자동 초기화 됨
 
-## 멤버 변수의 초기화
+# 멤버 변수의 초기화
 
 명시적 초기화(=) = 선언 시 대입 연산자를 통해 초기화
 
-### 초기화 블럭 = 복잡한 초기화 시 사용
+## 초기화 블럭 = 복잡한 초기화 시 사용
 
 - 인스턴스 초기화 블럭 = {}
 
@@ -269,7 +269,7 @@ this. 이 붙으면 인스턴스 변수
 
 자동 초기화(0) > 간단 초기화(=) > 복잡 초기화({}, static {})
 
-## 상속
+# 상속
 
 기존의 클래스로 새로운 클래스를 작성하는 것(코드의 재사용)
 
@@ -292,7 +292,7 @@ class 자식 클래스 extends 부모 클래스 {
 
 자손의 변경은 조상에 영향을 미치지 않는다
 
-## 포함 관계
+# 포함 관계
 
 포함 = 클래스의 멤버로 참조 변수를 선언하는 것
 
@@ -306,23 +306,23 @@ class 클래스2 { // 클래스2는 클래스1을 포함
 }
 ```
 
-## 클래스 간의 관계 설정하기
+# 클래스 간의 관계 설정하기
 
 대부분 포함 관계, 상속은 제약이 있어서 꼭 필요한 경우만 사용
 
-## 단일 상속
+# 단일 상속
 
 하나의 부모로부터 상속 가능
 
 다중 상속 = 비중이 높은 클래스 하나를 상속으로 나머지는 포함
 
-## Object 클래스 - 모든 클래스의 조상
+# Object 클래스 - 모든 클래스의 조상
 
 부모가 없는 클래스는 자동으로 Object 클래스를 상속 받음
 
 모든 클래스는 Object 클래스에 정의된 11개의 메서드를 상속 받음
 
-## 오버라이딩(overriding)
+# 오버라이딩(overriding)
 
 상속받은 조상의 메서드를 자신에 맞게 변경
 
@@ -348,7 +348,7 @@ class 클래스2 {
 
 의미상 같은 작업을 수행할 때 적절
 
-## 오버라이딩 조건
+# 오버라이딩 조건
 
 선언부가 조상 클래스의 메서드와 일치
 
@@ -356,13 +356,13 @@ class 클래스2 {
 
 예외는 조상 클래스의 메서드보다 많이 선언 불가
 
-## 참조 변수 super
+# 참조 변수 super
 
 객체 자신을 가리키는 참조 변수, 인스턴스 메서드(생성자) 내에서만 존재
 
 조상의 멤버를 자신의 멤버와 구별할 때 사용
 
-## super() 조상의 생성자
+# super() 조상의 생성자
 
 조상의 생성자를 호출할 때 사용
 
@@ -392,7 +392,7 @@ class 자식 클래스 extends 부모 클래스 {
 
 그렇지 않으면 컴파일러가 생성자 첫 줄에 super(); 를 삽입
 
-## 패키지(package)
+# 패키지(package)
 
 서로 관련된 클래스 묶음
 
@@ -408,7 +408,7 @@ class 자식 클래스 extends 부모 클래스 {
 
 패키지 선언이 없으면 이름없는(unnamed) 패키지에 속하게 된다 
 
-## 클래스 패스(classpath)
+# 클래스 패스(classpath)
 
 클래스 파일의 위치를 알려주는 경로
 
@@ -416,7 +416,7 @@ class 자식 클래스 extends 부모 클래스 {
 
 classpath(환경변수)에 패키지의 루트를 등록해줘야 함
 
-## import 문
+# import 문
 
 클래스를 사용할 때 패키지 이름을 생략할 수 있다
 
@@ -430,47 +430,47 @@ import 문은 패키지문과 클래스 선언 사이에 선언
 
 import 문은 컴파일 시에 처리되므로 프로그램의 성능에 영향 없음
 
-## static import 문
+# static import 문
 
 static 멤버를 사용할 때 클래스 이름을 생략 가능
 
 `import static 패키지명.클래스명;`
 
-## 제어자(modifier)
+# 제어자(modifier)
 
 클래스와 클래스의 멤버(멤버 변수, 메서드)에 부가적인 의미 부여
 
 하나의 대상에 여러 제어자 사용 가능(접근 제어자는 하나만)
 
-## static -클래스의 , 공통적인
+# static -클래스의 , 공통적인
 
-### static 멤버 변수
+## static 멤버 변수
 
 - 모든 인스턴스에 공통적으로 사용되는 클래스 변수로 변환
 - 클래스 변수는 인스턴스를 생성하지 않고 사용 가능
 - 클래스가 메모리에 로드될 때 생성
 
-### static 메서드
+## static 메서드
 
 - 인스턴스 생성하지 않고 호출 가능
 
 - static 메서드 안에서 인스턴스 멤버 직접 사용 불가
 
-## final - 마지막의, 변경 불가
+# final - 마지막의, 변경 불가
 
-### final 클래스
+## final 클래스
 
 - 변경 불가, 확장 불가, 다른 클래스에 상속 불가
 
-### final 메서드
+## final 메서드
 
 - 변경 불가, 오버라이딩 통해 재정의 불가
 
-### final 멤버 변수, final 지역 변수
+## final 멤버 변수, final 지역 변수
 
 - 값을 변경할 수 없는 상수로 변환
 
-## abstract - 추상의, 미완성의
+# abstract - 추상의, 미완성의
 
 abstract 클래스 = 클래스 내에 추상 메서드가 선언 되있음을 알림
 
@@ -486,7 +486,7 @@ abstract class 클래스1 {
 
 추상 클래스를 상속 받아 완전한 클래스를 만든 후 인스턴스 생성 가능
 
-## 접근 제어자
+# 접근 제어자
 
 private = 같은 클래스 내에서만 접근 가능
 
@@ -500,9 +500,9 @@ public > protected > (default) > private
 
 class = public or (default)
 
-## 캡슐화와 접근 제어자
+# 캡슐화와 접근 제어자
 
-## 접근 제어자 사용 이유
+# 접근 제어자 사용 이유
 
 - 외부로부터 데이터 보호하기 위해
 - 외부에는 불필요한 내부적으로만 사용되는 부분들을 감추기 위해
@@ -511,7 +511,7 @@ class = public or (default)
 
 인스턴스 변수 보호를 위해 public 메서드를 통한 간접 접근
 
-## 다형성(polymorphism)
+# 다형성(polymorphism)
 
 조상 타입 참조 변수로 자손 타입 객체를 다루는 것
 
@@ -544,7 +544,7 @@ class main {
 }
 ```
 
-## 참조 변수의 형변환
+# 참조 변수의 형변환
 
 사용할 수 있는 멤버의 개수를 조절하는 것
 
@@ -582,7 +582,7 @@ class 클래스3 extends 클래스1 {}
 
 에러가 발생 여부는 인스턴스가 무엇인지가 결정
 
-## instanceof 연산자
+# instanceof 연산자
 
 참조 변수의 형변환 가능여부 확인에 사용, 가능하면 true 반환
 
@@ -590,13 +590,13 @@ class 클래스3 extends 클래스1 {}
 
 `자손 instanceof 조상`
 
-## 매개변수의 다형성
+# 매개변수의 다형성
 
 참조형 매개변수는 메서드 호출 시 자신과 같은 타입 또는 자손 타입의 인스턴스를 넘겨줄 수도 있다
 
 `조상 클래스 참조 변수 = new 자손 생성자();`
 
-## 여러 종류의 객체를 배열로 다루기
+# 여러 종류의 객체를 배열로 다루기
 
 조상 타입의 배열에 자손들의 객체를 담을 수 있다
 
@@ -607,7 +607,7 @@ class 클래스3 extends 클래스1 {}
 참조 배열[3] = new 자손 생성자3();
 ```
 
-## 추상 클래스(abstract class)
+# 추상 클래스(abstract class)
 
 미완성 메서드를 갖고 있는 클래스
 
@@ -617,7 +617,7 @@ class 클래스3 extends 클래스1 {}
 
 꼭 필요하지만 자손마다 다르게 구현될 것으로 예상되는 경우
 
-## 추상 메서드
+# 추상 메서드
 
 미완성 메서드, 구현부가 없는 메서드
 
@@ -646,13 +646,13 @@ abstract class 자식 클래스 extends 부모 클래스 { // 불완전한 클�
 
 추상 메서드 호출 가능, 호출엔 선언부만 필요
 
-## 추상 클래스의 작성
+# 추상 클래스의 작성
 
 여러 클래스에 공통적으로 사용될 수 있는 추상 클래스를 바로 작성하거나 기존 클래스의 공통 부분을 뽑아서 추상 클래스를 만든다
 
 추상화된 코드는 구체화된 코드보다 유연하다
 
-## 인터페이스
+# 인터페이스
 
 추상 메서드의 집합
 
@@ -668,7 +668,7 @@ interface 인터페이스 이름 {
 }
 ```
 
-## 인터페이스의 상속
+# 인터페이스의 상속
 
 인터페이스의 조상은 인터페이스만 가능(Object가 최고 조상 아님)
 
@@ -686,7 +686,7 @@ interface 인터페이스3 {
 }
 ```
 
-## 인터페이스의 구현
+# 인터페이스의 구현
 
 인터페이스에 정의된 추상 메서드를 완성하는 것
 
@@ -702,7 +702,7 @@ class 클래스 이름 implements 인터페이스 이름{
 
 인터페이스는 인스턴스 변수를 가질 수 없다
 
-## 인터페이스를 이용한 다형성
+# 인터페이스를 이용한 다형성
 
 인터페이스 타입 매개변수는 인터페이스 구현한 클래스의 인스턴스만 가능
 
@@ -719,7 +719,7 @@ class 클래스1 extends 클래스2 implements 인터페이스 {
 
 오버라이딩 규칙 = 조상보다 접근 제어자의 범위가 좁아서는 안된다
 
-## 인터페이스의 장점
+# 인터페이스의 장점
 
 선언과 구현을 분리 가능(느슨한 결합)
 
@@ -729,7 +729,7 @@ class 클래스1 extends 클래스2 implements 인터페이스 {
 
 서로 관계 없는 클래스들을 관계 맺어줄 수 있다
 
-## 디폴트 메서드와 static 메서드
+# 디폴트 메서드와 static 메서드
 
 ```java 
 interface 인터페이스 {
@@ -740,13 +740,13 @@ interface 인터페이스 {
 }
 ```
 
-### 디폴트 메서드가 기존의 메서드와 충돌할 때
+## 디폴트 메서드가 기존의 메서드와 충돌할 때
 
 - 여러 인터페이스에서 디폴트 메서드 간의 충돌 = 인터페이스를 구현한 클래스에서 디폴트 메서드를 오버라이딩
 - 디폴트 메서드와 조상 클래스의 메서드 간의 충돌 = 조상 클래스가 상속되고 디폴트 메서드는 무시된다
 - 잘 모르겠을 땐 오버라이딩으로 해결 가능
 
-## 내부 클래스(inner class)
+# 내부 클래스(inner class)
 
 클래스 안의 클래스
 
@@ -757,12 +757,12 @@ class 클래스1{ // 외부 클래스
 }
 ```
 
-### 내부 클래스의 장점
+## 내부 클래스의 장점
 
 - 내부 클래스에서 외부 클래스의 멤버들을 쉽게 접근 가능
 - 코드의 복잡성으 줄일 수 있다(캡슐화)
 
-## 내부 클래스의 종류와 특징
+# 내부 클래스의 종류와 특징
 
 내부 클래스의 종류와 유효범위(scope)는 변수와 동일
 
@@ -772,7 +772,7 @@ static 내부 클래스 = 클래스 변수
 
 지역 내부 클래스 = 지역 변수
 
-## 내부 클래스의 제어자와 접근성
+# 내부 클래스의 제어자와 접근성
 
 내부 클래스에 제어자는 변수에 사용 가능한 제어자와 동일
 
@@ -944,7 +944,7 @@ class 클래스3 {
 }
 ```
 
-## 익명 클래스(anonymous class)
+# 익명 클래스(anonymous class)
 
 정의와 생성을 동시에 하는 이름 없는 일회용 클래스
 
@@ -995,7 +995,7 @@ class 클래스1 {
 }
 ```
 
-## 프로그램 오류
+# 프로그램 오류
 
 컴파일 에러 = 컴파일 할 때 발생하는 에러
 
@@ -1003,7 +1003,7 @@ class 클래스1 {
 
 논리적 에러 = 작성 의도와 다르게 동작
 
-## 예외 처리하기
+# 예외 처리하기
 
 ```java 
 try { // try문의 괄호 생략 불가
@@ -1018,13 +1018,13 @@ try { // try문의 괄호 생략 불가
 }
 ```
 
-## printStackTrace()와 getMessage()
+# printStackTrace()와 getMessage()
 
 Exception.printStackTrace(); = 예외 발생 당시 호출 스택에 있었던 메서드의 정보와 1예외 메시지를 화면에 출력한다.
 
 Exception.getMessage(); = 발생한 예외 클래스의 인스턴스에 저장된 메시지를 얻을 수 있다
 
-## 멀티 catch 블럭
+# 멀티 catch 블럭
 
 ```java 
 try {
@@ -1046,7 +1046,7 @@ try {
 // if else 문으로 instanceof 체크 후 형변환 하면 사용 가능
 ```
 
-## 예외 발생시키기
+# 예외 발생시키기
 
 ```java 
 // 연산자 new 를 이용해 예외 클래스 인스턴스 생성
@@ -1055,13 +1055,13 @@ Exception e = new Exception("임의 발생");
 throw e;
 ```
 
-## checked 예외, unchecked 예외
+# checked 예외, unchecked 예외
 
 checked 예외 = 컴파일러가 예외 처리 여부를 체크(예외 처리 필수)
 
 unchecked 예외 = 컴파일러가 예외 처리 여부를 체크 안함(예외 처리 선택)
 
-## 메서드에 예외 선언하기
+# 메서드에 예외 선언하기
 
 예외를 처리하는 방법 = try-catch 문, 예외 선언하기
 
@@ -1075,7 +1075,7 @@ unchecked 예외 = 컴파일러가 예외 처리 여부를 체크 안함(예외 
 }
 ```
 
-## finally 블럭
+# finally 블럭
 
 예외 발생 여부와 관계없이 수행되어야하는 코드
 
@@ -1091,7 +1091,7 @@ try {
 // try 문 안에 return 문으로 try 문을 빠져나가도 finally 문은 실행됨
 ```
 
-## 사용자 정의 예외 만들기
+# 사용자 정의 예외 만들기
 
 ```java 
 // Exception 과 RuntimeException 중에 조상을 선택해 예외 생성
@@ -1102,7 +1102,7 @@ class 예외1 extends Exception {
 }
 ```
 
-## 예외 되던지기(exception re-throwing)
+# 예외 되던지기(exception re-throwing)
 
 예외 처리 후 다시 예외 발생시키는 것
 
@@ -1128,7 +1128,7 @@ class 클래스1 {
 }
 ```
 
-## 연결된 예외(chained exception)
+# 연결된 예외(chained exception)
 
 예외가 다른 예외 발생시킬 수 있다
 
@@ -1149,23 +1149,23 @@ public class Throwable implements Serializable {
 }
 ```
 
-### 사용 이유
+## 사용 이유
 - 여러 예외를 하나로 묶어 다루기 위해 사용
 - checked 예외를 unchecked 예외로 변경할 때
 
-## Object 클래스
+# Object 클래스
 
 모든 클래스의 조상, 11개의 메서드 보유
 
 notify(), wait() 등은 쓰레드와 관련된 메서드
 
-## equals(Object obj)
+# equals(Object obj)
 
 객체 자신(this)와 주어진 객체(obj)를 비교한다. 같으면 true 다르면 false
 
 Object 클래스의 equals()는 객체의 주소를 비교(참조 변수값 비교)
 
-## equals(Object obj)의 오버라이딩
+# equals(Object obj)의 오버라이딩
 
 인스턴스 변수의 값을 비교하도록 equals()를 오버라이딩 해야 한다
 
@@ -1188,7 +1188,7 @@ class 클래스1 {
 }
 ```
 
-## hashCode()
+# hashCode()
 
 객체의 해시코드(hash code)를 반환하는 메서드
 
@@ -1204,11 +1204,11 @@ equals()를 오버라이딩하면, hashCode()도 오버라이딩 해야 한다
 
 equals()의 결과가 true 인 두 객체의 해시코드가 같아야 하기 때문이다
 
-## toString(), toString()의 오버라이딩
+# toString(), toString()의 오버라이딩
 
 toString() = 객체를 문자열로 변환하기 위한 메서드
 
-## String 클래스
+# String 클래스
 
 String 클래스 = 데이터(char[]) + 메서드(문자열 관련)
 
@@ -1218,7 +1218,7 @@ String 클래스 = 데이터(char[]) + 메서드(문자열 관련)
 
 문자열 결합이나 변경이 잦다면 내용을 변경 가능한 StringBuffer 를 사용
 
-## 문자열의 비교
+# 문자열의 비교
 
 ```java 
 // 내용 변경 불가
@@ -1236,13 +1236,13 @@ str3 == str4 ? false // 주소값 비교
 str3.equals(str4) ? true  / 내용 비교
 ```
 
-## 문자열 리터럴
+# 문자열 리터럴
 
 프로그램 실행 시 자동 생성(constant pool(상수 저장소)에 저장)
 
 같은 내용의 문자열 리터럴은 하나만 만들어짐
 
-## 빈 문자열("", empty string)
+# 빈 문자열("", empty string)
 
 내용이 없는 문자열, 크기가 0인 char 형 배열을 저장하는 문자열
 
@@ -1254,13 +1254,13 @@ String s = "";
 char c = ' ';
 ```
 
-## join()과 StringJoiner
+# join()과 StringJoiner
 
 join()은 여러 문자열 사이에 구분자를 넣어서 결합
 
 `String 변수1 = String.join("구분자", 배열);`
 
-## 문자열과 기본형 간의 변환
+# 문자열과 기본형 간의 변환
 
 숫자를 문자열로 바꾸는 방법
 
@@ -1282,31 +1282,31 @@ int 변수2 = Integer.valueOf("100"); // 기본형
 Integer 변수2 = Integer.valueOf("100"); // 참조형
 ```
 
-## StringBuffer 클래스
+# StringBuffer 클래스
 
 String 처럼 문자형 배열(char[])을 내부적으로 가지고 있다
 
 String 과 달리 내용을 변경할 수 있다
 
-## StringBuffer 의 생성자
+# StringBuffer 의 생성자
 
 배열은 길이 변경 불가, 공간이 부족할 경우 새로 생성
 
 StringBuffer 는 저장할 문자열의 길이를 고려해 적절한 크기로 생성
 
-## StringBuffer 의 변경
+# StringBuffer 의 변경
 
 String 과 달리 내용 변경 가능
 
 append()는 지정된 내용을 추가 후, StringBuffer 의 참조를 반환
 
-## StringBuffer 의 비교
+# StringBuffer 의 비교
 
 StringBuffer 는 equals()가 오버라이딩되어 있지 않다
 
 String 으로 변환 후 equals()로 비교해야 한다
 
-## StringBuilder
+# StringBuilder
 
 동기화되지 않았다.
 
@@ -1322,25 +1322,25 @@ StringBuffer 는 동기화되어 있다 멀티 쓰레드에 안전(thread-safe)
 
 StringBuffer 과 메서드 동일, 동기화 여부만 차이
 
-## Math 클래스
+# Math 클래스
 
 수학관련 static 메서드의 집합
 
 인스턴스 생성할 필요 없음
 
-## 래퍼(wrapper) 클래스
+# 래퍼(wrapper) 클래스
 
 기본형 값을 감싸는 클래스
 
 8개의 기본형을 객체로 다뤄야 할 때 사용하는 클래스
 
-## Number 클래스
+# Number 클래스
 
 모든 숫자 래퍼 클래스의 조상
 
-## 문자열을 숫자로 변환하기
+# 문자열을 숫자로 변환하기
 
-### 문자열을 숫자로 변환하는 방법
+## 문자열을 숫자로 변환하는 방법
 
 ```java 
 // floatValue(), longValue 등
@@ -1353,7 +1353,7 @@ int 변수2 = Integer.parseInt("100");
 Integer 변수3 = Integer.valueOf("100");
 ```
 
-### n 진법의 문자열을 숫자로 변환하는 방법
+## n 진법의 문자열을 숫자로 변환하는 방법
 
 ```java 
 int 변수4 = Integer.parseInt("100", 2); // 100(2) > 4
@@ -1363,13 +1363,13 @@ int 변수7 = Integer.parseInt("FF", 16); //  FF(16) > 256
 int 변수8 = Integer.parseInt("FF"); // NumberFormatException 발생
 ```
 
-## 오토박싱 & 언박싱
+# 오토박싱 & 언박싱
 
 기본형의 값을 객체로 자동변환하는 것을 오토박싱 그 반대가 언박싱
 
-## 날짜와 시간
+# 날짜와 시간
 
-### Calendar 클래스
+## Calendar 클래스
 
 추상 클래스이므로 getInstance()를 통해 구현된 객체를 얻어야 한다
 
@@ -1396,7 +1396,7 @@ Calendar 변수1 = Calendar.getInstance();
 변수1.roll(Calendar.DATE, -8)
 ```
 
-### Date 와 Calendar 간의 변환
+## Date 와 Calendar 간의 변환
 
 ```java 
 // Calendar > Date
@@ -1409,7 +1409,7 @@ Calendar cal = Calendar.getInstance();
 cal.setTime(d)
 ```
 
-## 형식화 클래스
+# 형식화 클래스
 
 java.text 패키지의 DecimalFormat, SimpleDateFormat
 
@@ -1417,7 +1417,7 @@ java.text 패키지의 DecimalFormat, SimpleDateFormat
 
 형식 문자열 > 숫자 or 날짜 기능
 
-### DecimalFormat
+## DecimalFormat
 
 ```java 
 // 숫자 or 날짜 > 원하는 형식
@@ -1434,7 +1434,7 @@ double d = num.doubleValue();
 // Integer.parseInt()는 콤마가 포함된 문자열 숫자로 변환 못함 
 ```
 
-### SimpleDateFormat
+## SimpleDateFormat
 
 ```java 
 // 날짜와 시간 다양한 형식으로 출력
@@ -1449,20 +1449,20 @@ Date d = df.parse("2015년 11월 23일");
 String result = df2.format(d);
 ```
 
-## 컬렉션 프레임웍(collections framework)
+# 컬렉션 프레임웍(collections framework)
 
 컬렉션(collection) = 객체를 모아놓은 것
 
 프레임웍(framework) = 표준화, 정형화된 체계적인 프로그래밍 방식
 
-### 컬렉션 프레임웍(collections framework)
+## 컬렉션 프레임웍(collections framework)
 
 - 컬렉션(다수의 객체)을 다루기 위해 표준화된 프로그래밍 방식
 - 컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스 제공
 
 컬렉션 클래스(collection class) = 다수의 데이터를 저장할 수 있는 클래스(Vector, ArrayList, HashSet)
 
-## 컬렉션 프레임웍의 핵심 인터페이스
+# 컬렉션 프레임웍의 핵심 인터페이스
 
 List = 순서 존재, 중복 허용
 
@@ -1472,7 +1472,7 @@ Map = 순서 없음, 값만 중복 허용
 
 Collection = List 와 Set 의 공통부분을 뽑아낸 것
 
-## Collection 인터페이스의 메서드
+# Collection 인터페이스의 메서드
 
 boolean add(Object o), boolean addAll(Collection c) = 추가
 
@@ -1488,7 +1488,7 @@ int size() = 저장된 객체의 개수 반환
 
 boolean contains(Object o), boolean containsAll(Collection c) = 특정 객체를 가지고 있는지 검색
 
-## List 인터페이스 = 저장 순서 유지, 중복 허용
+# List 인터페이스 = 저장 순서 유지, 중복 허용
 
 void add(int index, Object element), boolean addAll(int index, Collection c) = 추가
 
@@ -1504,11 +1504,11 @@ void sort(Comparator c) = 정렬
 
 List subList(int fromIndex, int toIndex) = 일부 리스트 추출
 
-## Set 인터페이스 = 저장 순서 없음, 중복 비허용
+# Set 인터페이스 = 저장 순서 없음, 중복 비허용
 
 Collection 인터페이스와 동일한 메서드
 
-## Map 인터페이스 = 저장 순서 없음, 값은 중복 허용
+# Map 인터페이스 = 저장 순서 없음, 값은 중복 허용
 
 Object put(Object key, Object value), void putAll(Map t) = 추가
 
@@ -1518,7 +1518,7 @@ boolean containsKey(Object key), boolean containsValue(Object value), Object get
 
 Set entrySet(), Set keySet(), Collection values() = 읽기
 
-## ArrayList
+# ArrayList
 
 기존의 Vector 를 개선한 것, 구현원리와 기능적으로 동일
 
@@ -1528,7 +1528,7 @@ List 인터페이스를 구현하므로, 저장 순서 유지, 중복 허용
 
 데이터 저장 공간으로 배열 사용
 
-## ArrayList 의 메서드
+# ArrayList 의 메서드
 
 ArrayList() = 기본 생성자
 
@@ -1562,9 +1562,9 @@ void trimToSize() = 빈 공간 제거
 
 int size() = 저장된 객체 수 반환
 
-## ArrayList 에 저장된 객체의 삭제 과정
+# ArrayList 에 저장된 객체의 삭제 과정
 
-### ArrayList 에 저장된 세 번째 데이터를 삭제하는 과정
+## ArrayList 에 저장된 세 번째 데이터를 삭제하는 과정
 
 ```java 
 // 길이 7의 배열
@@ -1582,9 +1582,9 @@ data1 = [0,1,2,4,5,6]
 - 데이터 삭제 후 데이터 개수가 줄었으므로 size 의 값 감소
 - 마지막 데이터를 삭제하는 경우 배열의 복사는 불필요
 
-### LinkedList
+## LinkedList
 
-### 배열의 장단점
+## 배열의 장단점
 - 장점 = 구조 간단, 데이터를 읽는 접근 시간 짧음
 - 단점 = 크기 변경 불가, 비순차적인 데이터 추가 및 삭제에 시간이 많이 걸림
 
@@ -1606,7 +1606,7 @@ data1 = [0,1,2,4,5,6]
 
 접근시간 = ArrayList
 
-## 스택과 큐(Stack & Queue)
+# 스택과 큐(Stack & Queue)
 
 스택(Stack) = LIFO 구조, 마지막에 저장된 것을 먼저 꺼낸다
 
@@ -1616,9 +1616,9 @@ data1 = [0,1,2,4,5,6]
 
 큐 = 링크드리스트로 구현하는 것이 좋음
 
-## 스택과 큐(Stack & Queue)의 메서드
+# 스택과 큐(Stack & Queue)의 메서드
 
-### 스택의 메서드
+## 스택의 메서드
 boolean empty() = 스택이 비어있는지 알려준다
 
 Object pop() = 삭제
@@ -1629,7 +1629,7 @@ Object peek() = 맨 위에 저장된 객체 반환
 
 int search(Object o) = 객체를 찾아 위치 반환, 없으면 -1
 
-### 큐의 메서드
+## 큐의 메서드
 
 boolean offer(Object o) = 추가, 성공하면 true 실패하면 false
 
@@ -1639,7 +1639,7 @@ Object remove() = 삭제, 비어있으면 예외 발생
 
 boolean add(Object o) = 추가, 실패하면 예외 발생
 
-## Iterator, ListIterator, Enumeration
+# Iterator, ListIterator, Enumeration
 
 컬렉션에 저장된 데이터를 접근하는 데 사용되는 인터페이스
 
@@ -1660,11 +1660,11 @@ while(it.hasNext()) {
 }
 ```
 
-## Map 과 Iterator
+# Map 과 Iterator
 
 Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야 함
 
-## Arrays
+# Arrays
 
 배열의 출력 = toString()
 
@@ -1674,7 +1674,7 @@ Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야 함
 
 배열의 정렬과 검색 = sort(), binarySearch() //정렬된 배열에 사용
 
-### 순차 검색과 이진 검색
+## 순차 검색과 이진 검색
 - 순차 검색 = 순서대로 찾는 것
 - 이진 탐색 = 둘로 나눠서 찾는 것
 
@@ -1686,7 +1686,7 @@ Map 에는 iterator 가 없다, keySet(), entrySet(), values() 호출해야 함
 
 람다와 스트림 관련 = parallelXXX(), spliterator(), stream()
 
-## Comparator 와 Comparable
+# Comparator 와 Comparable
 
 객체 정렬에 필요한 메서드(정렬 기준 제공)를 정의한 인터페이스
 
@@ -1696,17 +1696,17 @@ Comparator = 기본 정렬 기준 외 다른 기준으로 정렬할 때 사용
 
 compare()과 compareTo()는 두 객체의 비교결과를 반환하도록 작성
 
-## HashSet = 순서 X, 중복 X
+# HashSet = 순서 X, 중복 X
 
-### HashSet
+## HashSet
 - set 인터페이스를 구현한 대표적인 컬렉션 클래스
 - 순서를 유지하려면 LinkedHashSet 클래스를 사용
 
-### TreeSet
+## TreeSet
 - 범위 검색과 정렬에 유리한 컬렉션 클래스
 - HashSet 보다 데이터 추가, 삭제에 시간이 더 걸림
 
-## HashSet 주요 메서드
+# HashSet 주요 메서드
 
 HashSet(Collection c) = 생성자
 
@@ -1737,3 +1737,28 @@ boolean isEmpty() = 비어있는지 확인
 int size() = 저장된 객체의 갯수
 
 Object[] toArray(), Object[] toArray(Object[] a) = set 에 저장된 객체를 객체 배열로 반환
+
+```java 
+// equals()와 hashcode()를 오버라이딩해야 HashSet 이 바르게 동작
+class Person {
+    String name;
+    int age;
+    
+    @Override
+    public int hashcode() {
+        return Objects.hash(name, age);
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Person)) return false
+        
+        // 형변환 안 하면 에러남, Object 라는 객체에 name 과 age 라는 멤버가 없기 때문
+        Person p = (Person)obj;
+        
+        // 나 자신의 이름과 나이를 p 와 비교
+        return this.name.equals(p.name) & this.age == p.age;
+    }
+}
+```
+
